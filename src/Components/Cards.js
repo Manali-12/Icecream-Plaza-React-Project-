@@ -26,18 +26,23 @@ const useStyles = makeStyles((theme) => ({
         width: "500px",
         position: "relative",
         borderRadius: "10px",
-        textAlign: "center"
+        textAlign: "center",
+        "&:hover": {
+            boxShadow: " 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+            transitionProperty: "box-shadow",
+            transitionDuration: ".5s",
+        },
     },
     image: {
         width: "14em",
         height: "auto",
         padding: "15px 25px",
 
-        "&:hover": {
-            transitionProperty: "font-size",
-            transitionDuration: ".5s",
-            fontSize: "15px",
-        }
+        // "&:hover": {
+        //     transitionProperty: "font-size",
+        //     transitionDuration: ".5s",
+        //     fontSize: "15px",
+        // }
     },
     expand: {
         transform: 'rotate(0deg)',
