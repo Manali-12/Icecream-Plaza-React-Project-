@@ -1,11 +1,11 @@
 const details = [
-    {
-        cc: "Life is like an ice cream…. enjoy it before it melts. ...",
-        c1: "#C70039",
-        key: 9,
-        img: "https://i.ibb.co/VgGRLvj/e.png",
-        color: "#CCF2F4"
-    },
+    // {
+    //     cc: "Life is like an ice cream…. enjoy it before it melts. ...",
+    //     c1: "#C70039",
+    //     key: 9,
+    //     img: "https://i.ibb.co/VgGRLvj/e.png",
+    //     color: "#CCF2F4"
+    // },
     {
         cc: "You can't buy happiness, but you can buy ice cream and that is pretty much the same thing.",
         c1: "#87431D",
@@ -13,13 +13,13 @@ const details = [
         img: "https://i.ibb.co/SJjgQ3B/p.png",
         color: "#FFFCC1"
     },
-    // {
-    //     cc: "I scream. You scream. We all scream for ice cream.",
-    //     c1: "#290001",
-    //     key: 12,
-    //     img: "https://i.ibb.co/QvD5G58/h.png",
-    //     color: "#FAEEE7"
-    // },
+    {
+        cc: "I scream. You scream. We all scream for ice cream.",
+        c1: "#290001",
+        key: 12,
+        img: "https://i.ibb.co/QvD5G58/h.png",
+        color: "#FAEEE7"
+    },
     {
         cc: "I scream. You scream. We all scream for ice cream.",
         c1: "#290001",
@@ -28,13 +28,13 @@ const details = [
         color: "#B8B5FF"
     },
 
-    {
-        cc: "The cold never bothered me anyway.",
-        c1: "#310B0B",
-        key: 25,
-        img: "https://i.ibb.co/F5q1N07/u.png",
-        color: "#F35588"
-    },
+    // {
+    //     cc: "The cold never bothered me anyway.",
+    //     c1: "#310B0B",
+    //     key: 25,
+    //     img: "https://i.ibb.co/F5q1N07/u.png",
+    //     color: "#F35588"
+    // },
     {
         cc: "You can't buy happiness, but you can buy ice cream and that is pretty much the same thing.",
         c1: "#FF2626",
@@ -145,13 +145,13 @@ const details = [
     //     color: "#B8B5FF"
     // },
 
-    {
-        cc: "You can't buy happiness, but you can buy ice cream and that is pretty much the same thing.",
-        c1: "#AA2EE6",
-        key: 24,
-        img: "https://i.ibb.co/Ky8970L/t.png",
-        color: "#F5FCC1"
-    },
+    // {
+    //     cc: "You can't buy happiness, but you can buy ice cream and that is pretty much the same thing.",
+    //     c1: "#AA2EE6",
+    //     key: 24,
+    //     img: "https://i.ibb.co/Ky8970L/t.png",
+    //     color: "#F5FCC1"
+    // },
 
 
     {

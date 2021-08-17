@@ -6,7 +6,9 @@ const useStyles = makeStyles({
     heading: {
         color: "#012443",
         fontSize: "640%",
-        fontWeight: 600
+        fontWeight: 600,
+        maxWidth: "80%",
+        margin: "auto"
     },
     cover: {
         backgroundImage: `url(${`https://thumbs.dreamstime.com/b/variety-colorful-summer-popsicles-ice-cream-treats-overhead-view-scattered-pink-background-221139232.jpg`})`,
@@ -33,12 +35,12 @@ const useStyles = makeStyles({
 
     },
     para: {
-        maxWidth: "50%",
+        maxWidth: "60%",
         textAlign: "center",
         margin: "auto",
         color: "#FF6B6B",
         padding: "2%",
-        fontSize: "140%"
+        fontSize: "180%",
     }
 });
 export default function Home() {
