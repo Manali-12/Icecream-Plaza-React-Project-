@@ -1,6 +1,6 @@
-import { Button, Card, CardContent, CardMedia, Collapse, createTheme, makeStyles, ThemeProvider, Typography } from '@material-ui/core'
-import React, { useState } from 'react';
-import clsx from 'clsx';
+import { Button, createTheme, Grid, makeStyles, ThemeProvider, Typography } from '@material-ui/core'
+import React from 'react';
+import details from '../Info';
 
 const theme = createTheme({
     overrides: {
@@ -21,9 +21,7 @@ const theme = createTheme({
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        margin: "15px 0",
         display: "flex",
-        width: "500px",
         position: "relative",
         borderRadius: "10px",
         textAlign: "center",
@@ -33,35 +31,20 @@ const useStyles = makeStyles((theme) => ({
             transitionDuration: ".5s",
         },
     },
-    image: {
-        width: "14em",
-        height: "auto",
-        padding: "15px 25px",
-
-        // "&:hover": {
-        //     transitionProperty: "font-size",
-        //     transitionDuration: ".5s",
-        //     fontSize: "15px",
-        // }
-    },
-    expand: {
-        transform: 'rotate(0deg)',
-        marginLeft: 'auto',
-        transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.shortest,
-        }),
-    },
-    expandOpen: {
-        transform: 'rotate(-10deg)',
-    },
-
-    about: {
-        maxWidth: "250px",
-        textAlign: "center",
-        margin: "5px auto"
-    },
-    heading: {
+    image_box: {
+        minWidth: "240px",
+        height: "240px",
         margin: "5px"
+    },
+    image: {
+        width: "auto",
+        height: "80%",
+        padding: "15px 0",
+        "&:hover": {
+            transitionProperty: "font-size",
+            transitionDuration: ".5s",
+            fontSize: "15px",
+        }
     },
     btndiv: {
         margin: "auto",
@@ -69,56 +52,55 @@ const useStyles = makeStyles((theme) => ({
             background: "none"
         },
     },
-    aboutdiv: {
-        background: "linear-gradient(90deg, rgba(255,253,253,0.9587185215883228) 26%, rgba(255,255,255,0.9363095580028886) 84%)",
-        position: 'absolute',
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%,-50%)",
-        zIndex: 100,
-        fontWeight: 300,
-        borderRadius: "25px",
-
+    card_div: {
+        margin: "auto",
+        padding: "10px 10px"
+    },
+    card: {
+        margin: "5px auto"
     }
 }));
 
-export default function Cards(items) {
-    const { key, img, color, c1, cc } = items.items;
-    const [expanded, setExpanded] = useState(false);
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
+export default function Cards(props) {
+    const { setclick_Info } = props;
+    const handleClick = (e, item) => {
+        e.preventDefault();
+        setclick_Info(item);
+        console.log(item)
     };
+
+
     const classes = useStyles();
     return (
-        <ThemeProvider theme={theme}>
-            <div style={{ backgroundColor: color }} className={classes.root}>
-                <div className={classes.btndiv}>
-                    <Button
-                        className={clsx(classes.expand, {
-                            [classes.expandOpen]: expanded,
-                        })}
-                        onClick={handleExpandClick}
-                        aria-expanded={expanded}>
-                        <img
+        <>
+            <ThemeProvider theme={theme}>
+                <div className={classes.card_div}>
+                    <Grid container >
+                        {
+                            details.map((item) => {
+                                return <Grid item key={item.key} className={classes.card}><form onSubmit={(e) => handleClick(e, item)}>
+                                    <div className={classes.root} style={{ backgroundColor: item.color }}>
+                                        <div className={classes.btndiv}>
+                                            <Button type="submit" key={item.key}
+                                            >
+                                                <div className={classes.image_box}>
+                                                    <img
+                                                        className={classes.image}
+                                                        src={item.img}
+                                                        alt={" "}
+                                                    >
+                                                    </img></div>
+                                                {/* <h6>{item.key}</h6> */}
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </form></Grid>
+                            }
+                            )
+                        }
 
-                            className={classes.image}
-                            src={img}
-                            alt={" "}>
-                        </img>
-                        {/* <h6>{key}</h6> */}
-                    </Button>
+                    </Grid>
                 </div>
-                <div className={classes.aboutdiv} style={{ color: c1 }} onClick={handleExpandClick} >
-                    <Collapse in={expanded} timeout="auto" unmountOnExit>
-                        <Typography variant="h5" className={classes.heading}>
-                            Icecream
-                        </Typography>
-                        <Typography className={classes.about} variant="body2">
-                            {cc}
-                        </Typography>
-                    </Collapse>
-                </div>
-            </div >
-        </ThemeProvider>
+            </ThemeProvider></>
     )
 }
