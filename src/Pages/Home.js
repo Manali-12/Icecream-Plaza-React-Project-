@@ -3,44 +3,51 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
-    heading: {
-        color: "#012443",
-        fontSize: "640%",
-        fontWeight: 600,
-        maxWidth: "80%",
-        margin: "auto"
-    },
-    cover: {
-        backgroundImage: `url(${`https://thumbs.dreamstime.com/b/variety-colorful-summer-popsicles-ice-cream-treats-overhead-view-scattered-pink-background-221139232.jpg`})`,
-        height: "80vh",
-        width: "100vw",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        padding: "15% 0 0 0",
-        position: "relative"
 
+    cover: {
+        backgroundColor: "white",
+        position: "relative",
+        width: "80vw",
+        minHeight: "80vh",
+        margin: "4% auto",
+        borderRadius: "10px",
+        display: "flex",
+        height: "auto"
     },
     headingBlock: {
-        background: "linear-gradient(90deg, rgba(255,253,253,0) 0%, rgba(255,253,253,0.9587185215883228) 18%, rgba(255,255,255,0.9363095580028886) 77%, rgba(255,255,255,0) 100%)",
-        width: "80%",
-        textAlign: "center",
-        borderTop: "8px double white",
-        borderBottom: "8px double white",
-        height: "auto",
-        padding: "4% 0",
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%,-50%)",
+        padding: "5% 0 0 10%"
+    },
 
+    heading: {
+        color: "#012443",
+        fontSize: "620%",
+        fontWeight: 600,
     },
     para: {
-        maxWidth: "60%",
-        textAlign: "center",
-        margin: "auto",
         color: "#FF6B6B",
-        padding: "2%",
         fontSize: "180%",
+        maxWidth: "50%",
+        margin: "10px 0 20px 0"
+    },
+    img: {
+        position: "absolute",
+        bottom: "-70px",
+        right: "-60px",
+        minWidth: "70%",
+        transform: "rotate(-20deg)",
+    },
+    btn: {
+        color: "white",
+        borderRadius: "10px",
+        backgroundColor: "#A73489",
+        width: "220px",
+        height: "50px",
+        '&:hover': {
+            backgroundColor: "#ECA3F5",
+            color: "white",
+        },
+
+
     }
 });
 export default function Home() {
@@ -57,7 +64,11 @@ export default function Home() {
                 <div className={classes.headingBlock}>
                     <Typography variant="h1" className={classes.heading}> Ice-Cream Plaza </Typography>
                     <Typography variant="body1" className={classes.para}>You can't buy happiness, but you can buy ice cream and that is pretty much the same thing.</Typography>
-                    <Button variant="contained" size="large" color="secondary" onClick={handleClick}>Explore Ice-Creams</Button>
+                    <Button variant="contained" size="large" onClick={handleClick} className={classes.btn}>Ice-Creams        </Button>
+
+                </div>
+                <div>
+                    <img src="https://i.ibb.co/Ky8970L/t.png" alt="ice-cream" className={classes.img}></img>
                 </div>
             </div>
         </>
