@@ -21,7 +21,7 @@ const useStyles = makeStyles({
         width: "auto",
         height: "100%",
         margin: "-25% 0 -45px 0",
-        opacity: .5,
+        opacity: 0.5,
         overflow: "hidden"
     },
     card_imgbox: {
@@ -40,7 +40,7 @@ export default function CardShow({ click_Info }) {
             <Typography className={classes.card_about}>{cc || "Click on the ice-Cream you want to know about"}</Typography>
             <div className={classes.card_imgbox} >
 
-                <img src={img || "https://i.ibb.co/Ky8970L/t.png"} alt="a" className={classes.card_img} />
+                <img src={img || "https://i.ibb.co/r7ckjS3/m.png"} alt="a" className={classes.card_img} />
 
             </div>
         </div>

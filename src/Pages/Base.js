@@ -6,22 +6,20 @@ import Cards from '../Components/Cards';
 const useStyles = makeStyles({
     base: {
         display: "flex",
-        width: "90%",
-        margin: "20px auto",
-        maxHeight: "95vh",
-        overflow: "hidden"
+        width: "80%",
+        margin: "5% auto",
+        maxHeight: "80vh",
+        overflow: "hidden",
     },
     cards_show: {
-        width: "200em",
         backgroundColor: "white",
-        borderRadius: "25px",
     },
     cards_div: {
-        margin: "auto",
         backgroundColor: "white",
-        borderRadius: "25px",
         overflowY: "scroll",
-        height: "95vh"
+        height: "80vh",
+        minWidth: "440px",
+
     }
 
 })
