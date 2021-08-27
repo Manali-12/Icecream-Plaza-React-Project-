@@ -67,7 +67,7 @@ export default function Home() {
                     <Button variant="contained" size="large" onClick={handleClick} className={classes.btn}>Ice-Creams        </Button>
 
                 </div>
-                <div>
+                <div data-aos="fade-zoom-in">
                     <img src="https://i.ibb.co/Ky8970L/t.png" alt="ice-cream" className={classes.img}></img>
                 </div>
             </div>
