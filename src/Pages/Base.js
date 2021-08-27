@@ -13,14 +13,16 @@ const useStyles = makeStyles({
     },
     cards_show: {
         backgroundColor: "white",
+        maxWidth: "500px",
     },
     cards_div: {
         backgroundColor: "white",
         overflowY: "scroll",
         height: "80vh",
-        minWidth: "440px",
-
-    }
+        minWidth: "300px",
+        maxWidth: "800px",
+        overflowX: "hidden",
+    },
 
 })
 

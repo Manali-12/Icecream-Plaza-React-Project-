@@ -20,6 +20,7 @@ const theme = createTheme({
 })
 
 const useStyles = makeStyles((theme) => ({
+
     root: {
         display: "flex",
         position: "relative",
@@ -31,9 +32,12 @@ const useStyles = makeStyles((theme) => ({
         },
         justifyContent: "right",
     },
+
+
     image_box: {
         minWidth: "240px",
         height: "240px",
+
     },
     image: {
         width: "auto",
@@ -51,13 +55,7 @@ const useStyles = makeStyles((theme) => ({
             background: "none"
         },
     },
-    card_div: {
-        // margin: "auto",
-        // padding: "10px 10px"
-
-    },
     card: {
-        // margin: "5px auto"
         justifyContent: "flex-end",
     }
 }));
@@ -71,18 +69,21 @@ export default function Cards(props) {
         setclick_Info(item);
         console.log(item)
     };
-
-    const classes = useStyles();
+    const bg_I = details.map((item) => [item.color, item.key])
+    const classes = useStyles(bg_I);
+    console.log(bg_I);
     return (
         <>
             <ThemeProvider theme={theme}>
                 <div className={classes.card_div}>
-                    <Grid container className={classes.card}>
+                    <Grid container className={classes.card} data-aos="fade-up">
                         {
                             details.map((item) => {
 
                                 return <Grid item key={item.key} ><form onSubmit={(e) => handleClick(e, item)} >
-                                    <div className={classes.root} style={{ backgroundColor: item.color }}>
+                                    <div className={classes.root} style={
+                                        { backgroundColor: item.color }
+                                    }>
                                         <div className={classes.btndiv}>
                                             <Button type="submit" key={item.key}
                                             >
@@ -93,7 +94,6 @@ export default function Cards(props) {
                                                         alt={" "}
                                                     >
                                                     </img></div>
-                                                {/* <h6>{item.key}</h6> */}
                                             </Button>
                                         </div>
                                     </div>
